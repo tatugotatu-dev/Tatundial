@@ -1,0 +1,17 @@
+=====================================================================
+ REAL C++ FC - Sistema de Tracking GPS
+ Resultados de benchmark (8 cores, 22 rivales, 100 corridas por version)
+=====================================================================
+
+--- tracker_v1_buggy (100 corridas) ---
+Tiempo promedio:      12 ms
+Resultado esperado:   11 (rivales cercanos)
+Resultado obtenido:   varia entre 8 y 11 segun la corrida
+Corridas con resultado correcto (11): 41 / 100
+Corridas con resultado incorrecto:    59 / 100
+
+--- tracker_v2_slow (100 corridas) ---
+Tiempo promedio:      340 ms
+Resultado esperado:   11
+Resultado obtenido:   11 (siempre)
+Corridas con resultado correcto (11): 100 / 100
