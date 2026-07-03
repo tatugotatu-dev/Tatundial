@@ -25,19 +25,16 @@ CORRECTAS = {
             "ub": "SI",
             "tipo": "dangling-reference",
             "linea": "25",
-            "justificacion_keywords": ["local", "destruye", "ambito", "stack", "referencia"],
         },
         "S2": {
             "ub": "SI",
             "tipo": "iterator-invalidation",
             "linea": "35",
-            "justificacion_keywords": ["invalid", "iterador", "push_back", "realloc"],
         },
         "S3": {
             "ub": "SI",
             "tipo": "data-race",
             "linea": "48",
-            "justificacion_keywords": ["hilo", "race", "sincronizacion", "atomic", "mutex", "concurrencia"],
         },
     },
 
@@ -192,13 +189,11 @@ def corregir_ej1(texto):
         ub = extraer_campo(sec_texto, "UB").upper()
         tipo = extraer_campo(sec_texto, "Tipo").strip().lower()
         linea = extraer_campo(sec_texto, "Linea").strip()
-        just = extraer_campo(sec_texto, "Justificacion").strip().lower()
 
         pts = 0
         ok_ub = ub == ref["ub"]
         ok_tipo = tipo == ref["tipo"]
         ok_linea = linea == ref["linea"]
-        ok_just = any(kw in just for kw in ref["justificacion_keywords"])
 
         if ok_ub:
             pts += 1
@@ -206,20 +201,17 @@ def corregir_ej1(texto):
             pts += 2
         if ok_linea:
             pts += 2
-        if ok_just:
-            pts += 1
 
         puntaje += pts
         detalles[sn] = {
             "pts": pts,
-            "max": 6,
+            "max": 5,
             "ok_ub": ok_ub,
             "ok_tipo": ok_tipo,
             "ok_linea": ok_linea,
-            "ok_just": ok_just,
         }
 
-    puntaje_final = round(puntaje / 18 * 25)
+    puntaje_final = round(puntaje / 15 * 25)
     return min(puntaje_final, 25), detalles
 
 

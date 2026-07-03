@@ -18,8 +18,6 @@ Respuesta:
 - [ ] mutex solo alrededor del incremento
 - [ ] ambos combinados
 
-Justificación (1 linea):
-
 ## Q4 - Completá el fix
 ```cpp
 ___________________ pressureCount{0};

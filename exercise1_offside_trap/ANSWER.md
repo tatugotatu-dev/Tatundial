@@ -11,16 +11,13 @@ Tipos validos: `dangling-reference`, `iterator-invalidation`, `signed-overflow`,
 - UB:
 - Tipo:
 - Linea:
-- Justificacion:
 
 ## S2
 - UB:
 - Tipo:
 - Linea:
-- Justificacion:
 
 ## S3
 - UB:
 - Tipo:
 - Linea:
-- Justificacion:
